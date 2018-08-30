@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a href="/item/add">add Item</a>
+    <a href="/item/history">history Items Sold</a>
+    <a href="#">chart</a>
+    <table style="width:100%">
+        <tr>
+            <th>Photo</th>
+            <th>Item Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+        </tr>
+        <% for (let i = 0; i < itemDatas.length; i++) { %>
+            <tr>
+                <td><%= itemDatas[i].dataValues.imageLink %></td>
+                <td><%= itemDatas[i].dataValues.name %></td>
+                <td><%= itemDatas[i].dataValues.amount %></td>
+                <td><%= itemDatas[i].dataValues.price %></td>
+            </tr>
+        <% } %>
+    </table> 
+</body>
+</html>

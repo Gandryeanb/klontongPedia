@@ -4,6 +4,12 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     firstName: {
       type: DataTypes.STRING,
+      validate : {
+        is: {
+          args : ["^[a-z]+$",'i'],
+          msg : 'first name must be a char!'
+        }
+      }
     },
     lastName: {
       type: DataTypes.STRING,

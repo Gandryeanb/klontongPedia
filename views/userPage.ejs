@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Document</title> 
+</head>
+
+<body>
+    Hello
+    <%= session.firstName %> !!
+    <a href="/user/edit">editProfile</a>
+    <a href="/user/pendingTransaction">pending Transaction</a>
+    <a href="/shop">Shop</a>
+
+    <table style="width:80%">
+        <tr>
+            <th>Photo   </th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Shop</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+
+        <% for (let i = 0; i < itemDatas.length; i++) { %>
+            <tr>
+                <td><%= itemDatas[i].imageLink%></td>
+                <td><%= itemDatas[i].dataValues.name%></td>
+                <td><%= itemDatas[i].amount%></td>
+                <td><%= itemDatas[i].Shop.name%></td>
+                <td><%= itemDatas[i].price%></td>
+                <td><a href="/user/<%= itemDatas[i].id%>/buy">Buy</a></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" contedevice-widthnt="ie=edge">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <table style="width:80%">
+        <tr>
+            <th>name</th>
+            <th>Amout</th>
+            <th>Price per Items</th>
+            <th>Total Price</th>
+        </tr>
+    <% for (let i = 0; i < datas.length; i++) { %>
+        <tr>
+            <td><%= datas[i].Item.name%></td>
+            <td><%= datas[i].amount%></td>
+            <td><%= datas[i].price%></td>
+            <td><%= datas[i].amount * datas[i].price%></td>
+        </tr>
+    <% } %>
+    </table>
+</body>
+</html>

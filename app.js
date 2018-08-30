@@ -12,6 +12,7 @@ app.use(session({
     saveUninitialized: true
 }))
 app.use(bodyParser.urlencoded({extends:true}))
+
 app.use('/',Routes)
 
 app.listen(port, () => {

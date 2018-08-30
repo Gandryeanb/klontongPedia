@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <table style="width:80%">
+        <tr>
+            <th>Adress Delivery</th>
+            <th>Status Payment</th>
+            <th>Qty items</th>
+            <th>Total Price</th>
+            <th></th>
+        </tr>
+
+        <% for (let i = 0; i < datas.length; i++) { %>
+            <tr>
+                <td><%= datas[i].addressBuyer%></td>
+                <td><%= datas[i].status%></td>
+                <td><%= datas[i].amount%></td>
+                <td><%= datas[i].price%></td>
+                <td><a href="/user/<%= datas[i].id%>/pay">Pay</a></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

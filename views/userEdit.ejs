@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+</head>
+
+<body>
+    <div>
+        <% if (errMsg) { %>
+        <p>
+            <%= errMsg[0]%>
+        </p>
+        <% } %>
+    </div>
+    <form action="/user/edit" method="POST">
+        Username :<br>
+        <input type="text" name="username" value="<%=data.dataValues.username%>"><br>
+        Password :<br>
+        <input type="text" name="password" value="<%=data.dataValues.password%>"><br>
+        First name :<br>
+        <input type="text" name="firstName" value="<%=data.dataValues.firstName%>"><br>
+        Last name :<br>
+        <input type="text" name="lastName" value="<%=data.dataValues.lastName%>"><br>
+        Gender :<br>
+        <input type="text" name="lastName" value="<%=data.dataValues.gender%>"><br>
+        Email :<br>
+        <input type="text" name="email" value="<%=data.dataValues.email%>"><br>
+        Phone :<br>
+        <input type="text" name="phone" value="<%=data.dataValues.phone%>"><br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

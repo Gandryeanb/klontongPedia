@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/<%=data.dataValues.id%>/buy" method="POST"> 
+        Shop owner :<br>
+        <input type="text" name="ShopName" value="<%=data.dataValues.Shop.name%>" readonly><br>
+        Item name :<br>
+        <input type="text" name="itemName" value="<%=data.dataValues.name%>" readonly><br>
+        Price/items :<br>
+        <input type="text" name="price" value="<%=data.dataValues.price%>" readonly><br>
+        Amount :<br>
+        <input type="text" name="amount" value="0"><br>
+        Address Delivery :<br>
+        <textarea rows="4" cols="32" name="addressBuyer"></textarea>
+        <br>
+        <input type="submit" value="submit">
+        <input type="hidden" name="emailUser" value="<%=data.dataValues.Shop.emailUser%>" readonly><br>
+        <input type="hidden" name="itemId" value="<%=data.dataValues.id%>" readonly><br>
+    </form>
+</body>
+</html>
