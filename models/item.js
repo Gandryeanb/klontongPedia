@@ -7,7 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     shopId: DataTypes.INTEGER
   }, {});
   Item.associate = function(models) {
-    // associations can be defined here
+    let Transaction = models.Transaction
+    let Shop = models.Shop
+
+    Item.belongsTo(Shop,{foreignKey:'shopId'})
+    Item.hasOne(Transaction,{foreignKey:'itemId'})
   };
   return Item;
 };

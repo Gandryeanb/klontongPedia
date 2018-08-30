@@ -42,7 +42,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   User.associate = function(models) {
-    // associations can be defined here
+    let Shop = models.Shop
+    let Transaction = models.Transaction
+    
+    User.hasMany(Transaction,{foreignKey:'emailUser'})
+    User.hasOne(Shop,{foreignKey:'emailUser'})
   };
   return User;
 };

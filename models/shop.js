@@ -5,7 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     emailUser: DataTypes.INTEGER
   }, {});
   Shop.associate = function(models) {
-    // associations can be defined here
+    let User = models.User
+    let Item = models.Item
+
+    Shop.belongsTo(User,{foreignKey:'emailUser'})
+    Shop.hasMany(Item,{foreignKey:'shopId'})
   };
   return Shop;
 };

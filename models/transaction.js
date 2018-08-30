@@ -8,7 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     emailUser: DataTypes.STRING
   }, {});
   Transaction.associate = function(models) {
-    // associations can be defined here
+    let User = models.User
+    let Item = models.Item
+
+    Transaction.belongsTo(Item,{foreignKey:'itemId'})
+    Transaction.belongsTo(User, {foreignKey:'emailUser'})
   };
   return Transaction;
 };
