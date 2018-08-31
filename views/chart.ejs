@@ -10,6 +10,8 @@
 
     <canvas id="LineChartIncome" width="400" height="150"></canvas>
     <canvas id="LineChartSoldItem" width="150" height="150"></canvas>
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <script>
         const LineChartIncome = document.getElementById("LineChartIncome");
@@ -44,7 +46,7 @@
                 ]
 
         let lineChart = new Chart(LineChartIncome, {
-            type: 'radar',
+            type: 'bar',
             data: {
             labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun","Jul","Aug","Sept","Oct","Nov","Des"],
             datasets: [{
