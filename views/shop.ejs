@@ -12,6 +12,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%= shopName%>
     <a href="/item/add">add Item</a>
     <a href="/item/history">history Items Sold</a>
     <a href="/item/chart">chart</a>
@@ -24,7 +25,7 @@
         </tr>
         <% for (let i = 0; i < itemDatas.length; i++) { %>
             <tr>
-                <td><%= itemDatas[i].dataValues.imageLink %></td>
+                <td><img src="<%= imageHelper(itemDatas[i].dataValues.imageLink) %>"></td>
                 <td><%= itemDatas[i].dataValues.name %></td>
                 <td><%= itemDatas[i].dataValues.amount %></td>
                 <td><%= itemDatas[i].dataValues.price %></td>

@@ -1,9 +1,11 @@
 const Shop = require('../models').Shop
 const Item = require('../models').Item
+const imageHelper = require('../helpers/imageHelper')
 
 class ControllerShop {
 
     static shopPage(req,res) {
+        let shopName;
         Shop.findAll({
             where:{
                 emailUser: req.session.user.email
@@ -11,6 +13,7 @@ class ControllerShop {
             
         },{raw:true})
         .then(datas => {
+            shopName = datas[0].name
             if (datas.length > 0) { 
                 
                 req.session.user.shopId = datas[0].id
@@ -24,8 +27,8 @@ class ControllerShop {
             }
         })
         .then(itemDatas => {
-            
-            res.render('shop',{itemDatas})
+            // res.send(shopName)
+            res.render('shop',{itemDatas,imageHelper,shopName})
         })
     }
 

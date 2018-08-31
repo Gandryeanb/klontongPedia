@@ -11,8 +11,6 @@ module.exports = (sequelize, DataTypes) => {
 
     hooks:{
       afterCreate: (user, options) => {
-        console.log(user);
-        console.log(user.dataValues.itemId);
         let Item = sequelize.models.Item
 
         Item.findOne({where:{
