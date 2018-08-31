@@ -1,46 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
-    <title>Document</title> 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
 </head>
 
-<body>
-    Hello
-    <%= session.firstName %> !!
-    <a href="/user/edit">editProfile</a>
-    <a href="/user/pendingTransaction">pending Transaction</a>
-    <a href="/shop">Shop</a>
 
-    <table style="width:80%">
-        <tr>
+<body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container">
+                    <a class="/user" href="/">Kelontong Pedia</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                   
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="input-group input-group-sm">
+                                    <a class="nav-link" href="/logout">Logout</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </nav>
+    <!-- <a href="/user/edit">editProfile</a> -->
+    <!-- <a href="/user/pendingTransaction">pending Transaction</a> -->
+    <!-- <a href="/shop">Shop</a> -->
+
+    <!-- <table style="width:80%"> -->
+    <!-- <tr>
             <th>Photo   </th>
             <th>Name</th>
             <th>Qty</th>
             <th>Shop</th>
             <th>Price</th>
             <th></th>
+        </tr> -->
+
+        <!-- <%= session.firstName %> !!
+<a href="/user/edit">editProfile</a>
+<a href="/user/pendingTransaction">pending Transaction</a>
+<a href="/shop">Shop</a> -->
+
+        <tr>
+
+
+
+      
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="jumbotron-heading">Welcome to Lapak <%=session.firstName %>, Happy Shopping  </h1>
+                </div>
+            </section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-3">
+                        <div class="card bg-light mb-3">
+                            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> User Activity</div>
+                            <ul class="list-group category_block">
+                                <li class="list-group-item"><a href="/user/pendingTransaction">Pending Transaction</a></li>
+                                <li class="list-group-item"><a href="/shop">Shop</a></li>
+                                <li class="list-group-item"><a href="/user/edit">Edit Profile</a> 
+                        
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+
+                                <% for (let i = 0; i < itemDatas.length; i++) { %>
+                                    <div class="col-12 col-md-6 col-lg-4" style="width:300px; padding-bottom: 30px">
+                                        <div class="card">
+                                            <img class="card-img-top" src="<%=imageHelper( itemDatas[i].imageLink)%>" alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title"><%=itemDatas[i].dataValues.name %></a></h4>
+                                                <p class="card-text"><%= itemDatas[i].price %></p>
+                                                Stok: <%= itemDatas[i].amount %><br>
+                                                <div class="col">
+                                                        <a href="/user/<%= itemDatas[i].id%>/buy" class="btn btn-success btn-block">Buy</a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>   
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            
         </tr>
-        
-        <% for (let i = 0; i < itemDatas.length; i++) { %>
-            <tr>
-                <td><img src="<%=imageHelper(itemDatas[i].imageLink)%>"></td>
-                <td><%= itemDatas[i].dataValues.name%></td>
-                <td><%= itemDatas[i].amount%></td>
-                <td><%= itemDatas[i].Shop.name%></td>
-                <td><%= itemDatas[i].price%></td>
-                <td><a href="/user/<%= itemDatas[i].id%>/buy">Buy</a></td>
-            </tr>
-        <% } %>
-    </table>
+            <!-- </table> -->
 </body>
 
 </html>

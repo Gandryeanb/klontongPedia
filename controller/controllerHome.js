@@ -51,7 +51,7 @@ class ControllerHome {
                     firstName: data[0].dataValues.firstName
                 }
                 req.session.user = sessionPacker
-                res.redirect('/')
+                res.redirect('/user')
             }
         })
         .catch(err => {

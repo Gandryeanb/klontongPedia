@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Item Page</title>
+</head>
+<body>
+    <h1>Welcome to My shop</h1>
+
+    <form action="/item" method="POST">
+        <br>
+        <input type="text" name="name" placeholder="Name Item">
+        <br><br>
+        <input type="text" name="imageLink" placeholder="Image Link">
+        <br><br>
+        <input type="text" name="amount" placeholder="Amount">
+        <br><br>
+        <input type="text" name="shopId" placeholder="Shop Id" readonly value="">
+        <br><br>
+        <input type="text" name="price" placeholder="Price">
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Image Link</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>ShopId</th>
+        </tr>
+
+        <br>
+        <br>
+        
+
+        <% data.forEach((el,i) => { %>
+            <tr>
+                <td><%=i+1%></td>
+                <td><%=el.name%></td>
+                <td><%=el.imageLink%></td>
+                <td><%=el.amount%></td>
+                <td><%=el.price%></td>
+                <td><%=el.shopId%></td>
+           
+               <td>
+                   <a href="/item/<%=el.id%>/edit">Edit</a>
+                   <a href="/item/<%=el.id%>/delete">Delete</a>
+               </td>
+               
+
+            </tr>
+
+       <% })%>
+    </table>
+
+</body>
+</html>

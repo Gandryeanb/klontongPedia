@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 9000
+const port = process.env.PORT || 4000
 const bodyParser = require('body-parser')
 const Routes = require('./routes')
 const session = require('express-session')

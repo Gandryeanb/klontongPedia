@@ -13,8 +13,9 @@ class ControllerShop {
             
         },{raw:true})
         .then(datas => {
-            shopName = datas[0].name
+            
             if (datas.length > 0) { 
+                shopName = datas[0].name
                 
                 req.session.user.shopId = datas[0].id
                 return Item.findAll({

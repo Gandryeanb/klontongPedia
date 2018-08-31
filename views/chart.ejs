@@ -1,3 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <div class="col-12">
+          <div class="col-8">
+              <canvas id="LineChartIncome" width="400" height="150"></canvas>
+          </div>
+          <!-- <div class="col-4">
+              <canvas id="LineChartSoldItem" width="150" height="150"></canvas>
+          </div> -->
+      </div>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <%- include('./chart/chartInclude',{dataChart:dataChart})%>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,70 +42,6 @@
 </head>
 <body>
 
-    <canvas id="LineChartIncome" width="400" height="150"></canvas>
-    <canvas id="LineChartSoldItem" width="150" height="150"></canvas>
-
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <script>
-        const LineChartIncome = document.getElementById("LineChartIncome");
-        const LineChartSoldItem = document.getElementById("LineChartSoldItem");
-        const BgColor = [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ]
-        const borderColor = [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ]
-
-        let lineChart = new Chart(LineChartIncome, {
-            type: 'bar',
-            data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun","Jul","Aug","Sept","Oct","Nov","Des"],
-            datasets: [{
-                label: 'Total Incompe Per Year',
-                data: [4,2,4,5,8,9,4,5,2,11,12,15],
-                backgroundColor: BgColor,
-                borderColor: borderColor ,
-                borderWidth: 1
-            }]
-            },  
-        })
-
-        let lineChart1 = new Chart(LineChartSoldItem, {
-            type: 'pie',
-            data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun","Jul","Aug","Sept","Oct","Nov","Des"],
-            datasets: [{
-                label: 'TotalItem sold per year',
-                data: [3,2,4,5,8,9,4,5,2,11,12,15],
-                backgroundColor: BgColor,
-                borderColor: borderColor,
-                borderWidth: 1
-            }]
-            },  
-        })
-    </script>
 </body>
 </html>

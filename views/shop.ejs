@@ -1,36 +1,207 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
-    <title>Document</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <%= shopName%>
-    <a href="/item/add">add Item</a>
-    <a href="/item/history">history Items Sold</a>
-    <a href="/item/chart">chart</a>
-    <table style="width:100%">
-        <tr>
-            <th>Photo</th>
-            <th>Item Name</th>
-            <th>Amount</th>
-            <th>Price</th>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hello</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User Activity <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/user/pendingTransaction">pending Transaction</a></li>
+          <li> <a href="/shop">Shop</a></li>
+
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/user/edit"><span class="glyphicon glyphicon-user"></span> Edit Profile</a></li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav> -->
+<body>
+ 
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+</head>
+
+
+<body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container">
+                    <a class="/user" href="/">Kelontong Pedia</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                   
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="input-group input-group-sm">
+                                    <a class="nav-link" href="/logout">Logout</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </nav>  
+
+            <!-- <a href="/item/add">add Item</a>
+            <a href="/item/history">history Items Sold</a>
+            <a href="#">chart</a>
+            <table style="width:100%"> -->
+
+          
+                <!-- <tr>
+                    <th>Photo</th>
+                    <th>Item Name</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                </tr>
+                <% for (let i = 0; i < itemDatas.length; i++) { %>
+                    <tr>
+                        <td><%= itemDatas[i].dataValues.imageLink %></td>
+                        <td><%= itemDatas[i].dataValues.name %></td>
+                        <td><%= itemDatas[i].dataValues.amount %></td>
+                        <td><%= itemDatas[i].dataValues.price %></td>
+                        <div class="col">
+                            <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4" style="width:300px;">
+                            <div class="card">
+                                <img class="card-img-top" src="<%=imageHelper( itemDatas[i].dataValues.imageLink)%>" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="product.html" title="View Product"><%= itemDatas[i].dataValues.name %></a></h4>
+                                    <p class="card-text"><%= itemDatas[i].dataValues.price %></p>
+                                    Stok: <%= itemDatas[i].dataValues.amount %><br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#" class="btn btn-success btn-block">Buy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>  
+                        
+                    </tr>
+                <% } %>
+            </table>  -->
+
+
+      
+            <section class="jumbotron text-center">
+                <div class="container">
+                    <h1 class="jumbotron-heading">Welcome to your Shop  </h1>
+                </div>
+            </section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-3">
+                        <div class="card bg-light mb-3">
+                            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Shop Activity</div>
+                            <ul class="list-group category_block">
+                                    <li class="list-group-item"><a href="/user">Buy Item</a>
+                                <li class="list-group-item"><a href="/item/add">Add Item</a></li>
+                                <li class="list-group-item"> <a href="/item/history">History Items Sold</a></li>
+                                <li class="list-group-item"><a href="/user/edit">Edit Profile</a>
+                                    <li class="list-group-item"><a href="/item/chart">Chart</a> 
+                        
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            
+                            <% for (let i = 0; i < itemDatas.length; i++) { %>
+                            <div class="col-12 col-md-6 col-lg-4" style="width:300px; padding-bottom: 30px">
+                                <div class="card">
+                                    <img class="card-img-top" src="<%=imageHelper( itemDatas[i].dataValues.imageLink)%>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><%= itemDatas[i].dataValues.name %></a></h4>
+                                        <p class="card-text"><%= itemDatas[i].dataValues.price %></p>
+                                        Stok: <%= itemDatas[i].dataValues.amount %><br>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                            
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-4 col-xl-3">
+                            <h5>About</h5>
+                            <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                            <p class="mb-0">
+                                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                            </p>
+                        </div>
+
+                     
+
+                        <div class="col-md-4 col-lg-3 col-xl-3">
+                            <h5>Contact</h5>
+                            <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-home mr-2"></i> My company</li>
+                                <li><i class="fa fa-envelope mr-2"></i> email@example.com</li>
+                                <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
+                                <li><i class="fa fa-print mr-2"></i> + 33 12 14 15 16</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 copyright mt-3">
+                            <p class="float-left">
+                                <a href="#">Back to top</a>
+                            </p>
+                            <p class="text-right text-muted">created with <i class="fa fa-heart"></i> by <a href="https://t-php.fr/43-theme-ecommerce-bootstrap-4.html"><i>t-php</i></a>
+                                | <span>v. 1.0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </tr>
-        <% for (let i = 0; i < itemDatas.length; i++) { %>
-            <tr>
-                <td><img src="<%= imageHelper(itemDatas[i].dataValues.imageLink) %>"></td>
-                <td><%= itemDatas[i].dataValues.name %></td>
-                <td><%= itemDatas[i].dataValues.amount %></td>
-                <td><%= itemDatas[i].dataValues.price %></td>
-            </tr>
-        <% } %>
-    </table> 
+
+            <!-- </table> -->
+</body>
+
+</html>
 </body>
 </html>
