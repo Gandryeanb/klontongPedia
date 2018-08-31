@@ -1,4 +1,5 @@
 const Item = require('../models').Item
+const dateReader = require('../helpers/dateReader')
 const Transaction = require('../models').Transaction
 
 class ControllerItem {
@@ -34,12 +35,15 @@ class ControllerItem {
             }
         })
         .then(datas => {
-            // res.send(datas)
-            res.render('historyItem',{datas})
+            res.render('historyItem',{datas,dateReader})
         })
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static chart(req,res) {
+        res.render('chart')
     }
 }
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="LineChartIncome" width="400" height="150"></canvas>
+    <canvas id="LineChartSoldItem" width="150" height="150"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script>
+        const LineChartIncome = document.getElementById("LineChartIncome");
+        const LineChartSoldItem = document.getElementById("LineChartSoldItem");
+        const BgColor = [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ]
+        const borderColor = [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ]
+
+        let lineChart = new Chart(LineChartIncome, {
+            type: 'radar',
+            data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun","Jul","Aug","Sept","Oct","Nov","Des"],
+            datasets: [{
+                label: 'Total Incompe Per Year',
+                data: [4,2,4,5,8,9,4,5,2,11,12,15],
+                backgroundColor: BgColor,
+                borderColor: borderColor ,
+                borderWidth: 1
+            }]
+            },  
+        })
+
+        let lineChart1 = new Chart(LineChartSoldItem, {
+            type: 'pie',
+            data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun","Jul","Aug","Sept","Oct","Nov","Des"],
+            datasets: [{
+                label: 'TotalItem sold per year',
+                data: [3,2,4,5,8,9,4,5,2,11,12,15],
+                backgroundColor: BgColor,
+                borderColor: borderColor,
+                borderWidth: 1
+            }]
+            },  
+        })
+    </script>
+</body>
+</html>

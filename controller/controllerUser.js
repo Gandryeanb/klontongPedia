@@ -1,7 +1,10 @@
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 const User = require('../models').User
-const errMsgCatcher = require('../helpers/errMsgCatcher')
 const Item = require('../models').Item
 const Shop = require('../models').Shop
+const imageHelper = require('../helpers/imageHelper')
+const errMsgCatcher = require('../helpers/errMsgCatcher')
 const Transaction = require('../models').Transaction
 
 class ControllerUser {
@@ -25,8 +28,6 @@ class ControllerUser {
     }
 
     static pendingTransactionGet(req,res) {
-        console.log(req.session.user);
-        
         Transaction.findAll({
             where: {
                 emailUser : req.session.user.email,
@@ -34,7 +35,6 @@ class ControllerUser {
             }
         })
         .then(datas => {
-            // res.send(datas)
             res.render('userPendingTransaction',{datas})
         })
         .catch(err => {
@@ -52,9 +52,6 @@ class ControllerUser {
             }
         })
         .then(data => {
-            console.log(data);
-            
-            // res.send(data)
             res.render('userBuy',{data})
         })
         .catch(err => {
@@ -84,14 +81,17 @@ class ControllerUser {
         let session = req.session.user
         
         Item.findAll({
+            where:{
+                amount : {
+                    [Op.gt ]: 0
+                }
+            },
             include:{
                 model:Shop
             }
         })
-        .then(itemDatas => {
-            console.log(session);
-            
-            res.render('userPage',{session,itemDatas})   
+        .then(itemDatas => {  
+            res.render('userPage',{session,itemDatas,imageHelper})   
         })
         .catch(err => {
             res.send(err)

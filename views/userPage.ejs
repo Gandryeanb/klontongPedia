@@ -29,10 +29,10 @@
             <th>Price</th>
             <th></th>
         </tr>
-
+        
         <% for (let i = 0; i < itemDatas.length; i++) { %>
             <tr>
-                <td><%= itemDatas[i].imageLink%></td>
+                <td><img src="<%=imageHelper(itemDatas[i].imageLink)%>"></td>
                 <td><%= itemDatas[i].dataValues.name%></td>
                 <td><%= itemDatas[i].amount%></td>
                 <td><%= itemDatas[i].Shop.name%></td>

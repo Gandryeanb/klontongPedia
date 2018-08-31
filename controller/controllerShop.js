@@ -12,7 +12,6 @@ class ControllerShop {
         },{raw:true})
         .then(datas => {
             if (datas.length > 0) { 
-                console.log();
                 
                 req.session.user.shopId = datas[0].id
                 return Item.findAll({
@@ -25,7 +24,6 @@ class ControllerShop {
             }
         })
         .then(itemDatas => {
-            console.log(itemDatas);
             
             res.render('shop',{itemDatas})
         })
